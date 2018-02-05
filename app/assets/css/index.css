@@ -1,0 +1,50 @@
+.logo {
+  text-align: center;
+}
+.logo img {
+  margin-top: 20px;
+  height: 100px;
+  width: 300px;
+}
+
+.modal-dialog {
+  padding-top: 1%;
+  padding-bottom: 4%;
+}
+.modal-dialog .modal-content {
+  background-color: #fafafa;
+  opacity: 0.9;
+}
+.modal-dialog .modal-content .login-text {
+  text-align: center;
+  color: black;
+}
+.modal-dialog .modal-content .sign-up {
+  text-align: center;
+}
+.modal-dialog .modal-content .sign-up a {
+  color: black;
+}
+.modal-dialog .modal-content .sign-up h5 {
+  color: #b1aaaa;
+}
+.modal-dialog .modal-content .btn-link {
+  color: white;
+}
+.modal-dialog .modal-content .login-button {
+  float: right;
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 30%;
+}
+.modal-dialog .modal-content .forget-pass {
+  text-align: left;
+}
+.modal-dialog .modal-content .forget-pass a {
+  color: black;
+}
+.modal-dialog .modal-content .modal-heading h2 {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=index.css.map */
