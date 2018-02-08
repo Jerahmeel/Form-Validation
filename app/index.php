@@ -67,12 +67,16 @@
                 </div>
             <div class="modal-body">
                     <!-- form was here -->
+                    
+<form method="post" action="php/insert.php" enctype="multipart/form-data">
+
+
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                             </span>
-                            <input id="fn" type="text" class="form-control" placeholder="First Name" />
+                            <input id="fn" name="fn" type="text" class="form-control" placeholder="First Name" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -80,7 +84,7 @@
                             <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                             </span>
-                            <input id="mn" type="text" class="form-control" placeholder="Middle Name" />
+                            <input id="mn" name="mn" type="text" class="form-control" placeholder="Middle Name" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -88,7 +92,7 @@
                                 <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-user"></span>
                                 </span>
-                                <input id="ln" type="text" class="form-control" placeholder="Last Name" />
+                                <input id="ln" name="ln" type="text" class="form-control" placeholder="Last Name" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -96,7 +100,7 @@
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-envelope"></span>
                                     </span>
-                                    <input id="ea" type="text" class="form-control" placeholder="Email Address" />
+                                    <input id="ea" name="ea" type="text" class="form-control" placeholder="Email Address" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -104,7 +108,7 @@
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-phone"></span>
                                     </span>
-                                    <input id="cn" type="text" class="form-control" placeholder="Contact Number" />
+                                    <input id="cn" name="cn" type="text" class="form-control" placeholder="Contact Number" />
                                 </div>
                             </div>  
                             
@@ -113,7 +117,7 @@
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-user"></span>
                                     </span>
-                                    <input id="uname" type="text" class="form-control" placeholder="Username" />
+                                    <input id="uname" name="uname" type="text" class="form-control" placeholder="Username" />
                                 </div>
                             </div>
                 
@@ -122,7 +126,7 @@
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-lock"></span>
                                     </span>
-                                    <input type="text" id="rpassword" class="form-control" placeholder="Password" />
+                                    <input type="text" id="rpassword" name="rpassword" class="form-control" placeholder="Password" />
                                 </div>
                             </div>
 
@@ -131,15 +135,23 @@
                                     <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-lock"></span>
                                     </span>
-                                    <input type="text" id="cpassword" class="form-control" placeholder="Confirm Password" />
+                                    <input type="text" id="cpassword" name="cpassword" class="form-control" placeholder="Confirm Password" />
                                 </div>
-                            </div>                                
-                
+                            </div>   
+
+                        <input type="file" name="USERIMAGE" id="USERIMAGE" accept="userimages/*" >   
+                            
+
                             <div class="form-group text-center">
-                                <button type="submit" id="signUpBtn" class="btn btn-danger btn-lg login-button">Sign Up
+                                <button type="submit" id="signUpBtn" name='signUpBtn' class="btn btn-danger btn-lg login-button">Sign Up
                                         <span class="glyphicon glyphicon-menu-right"></span>
                                 </button>
                             </div>
+
+
+
+</form>
+
                                         
                             <div class="forget-pass">
                                     <br><br> 

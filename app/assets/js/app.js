@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('#su').on('click', function(){
         $('.login-in-modal').addClass('hide');
         $('.sign-up-modal').removeClass('hide');
@@ -56,3 +57,8 @@ document.querySelector("#cpassword").addEventListener("keypress", function(){
     var rp = document.querySelector("#rpassword").value;
     var cp = document.querySelector("#cpassword").value;
 });
+
+
+
+
+
