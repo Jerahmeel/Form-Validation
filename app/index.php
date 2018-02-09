@@ -68,7 +68,7 @@
             <div class="modal-body">
                     <!-- form was here -->
                     
-<form method="post" action="php/insert.php" enctype="multipart/form-data">
+<form method="post" action="insert.php" enctype="multipart/form-data">
 
 
                     <div class="form-group">
@@ -139,7 +139,7 @@
                                 </div>
                             </div>   
 
-                        <input type="file" name="USERIMAGE" id="USERIMAGE" accept="userimages/*" >   
+                        <input type="file" name="USERIMAGE" id="USERIMAGE" accept="assets/img/userimages/*" >   
                             
 
                             <div class="form-group text-center">

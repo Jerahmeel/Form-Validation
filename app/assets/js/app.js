@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('#su').on('click', function(){
-        $('.login-in-modal').addClass('hide');
+        $('.employee-modal').addClass('hide');
         $('.sign-up-modal').removeClass('hide');
     });
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
 // });
 
 document.querySelector("#li").addEventListener("click", function(){
-    document.querySelector(".login-in-modal").classList.remove('hide');
+    document.querySelector(".employee-modal").classList.remove('hide');
     document.querySelector(".sign-up-modal").classList.add('hide');
 });
 

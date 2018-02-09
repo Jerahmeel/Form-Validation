@@ -40,7 +40,7 @@
                     }
 
                     $userimage=time().'.'.$extension;
-                    $newname="userimages/".$userimage;
+                    $newname="assets/img/userimages/".$userimage;
                     
                     $copied = copy($_FILES['USERIMAGE']['tmp_name'], $newname);
 
@@ -65,7 +65,7 @@
 
   $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."')");
 
-  header("Location:../index.php");
+  header("Location:admin.php");
 
     }
 
