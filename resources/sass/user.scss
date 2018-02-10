@@ -1,0 +1,248 @@
+$light-gray: #eceef1;
+$gray: darken(#eceef1, 30%);
+$slate: darken(#eceef1, 70%);
+$turquoise: #1abc9c;
+* {
+  box-sizing: border-box;
+}
+
+
+.nav-cntainer{
+  width: 100%;
+  padding: 0%;
+  position: fixed;
+    z-index: 1;
+
+
+    .nav-cntents{
+        background-color: rgb(250, 246, 246);
+        border-radius: 0% ; 
+        padding: 3px;
+      
+        
+    }
+}
+
+
+.nav-top{
+    margin: 0;
+      background-color: rgb(90, 72, 72);
+      border: none;
+      border-radius: 0%;
+      height: 60px;
+     
+}
+.cont{
+    width:100%;
+    padding: 0;
+    position: absolute;
+  
+} 
+
+
+
+
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 75px;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  z-index: 1;
+
+  
+  a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+}
+
+
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+
+
+body{
+   height:100%;
+    width:100%;
+ 
+     background: $light-gray;
+  
+  color: $slate;
+
+    .cont{
+         height:100%;
+    width:100%;
+    padding: 10%;
+        #btnin{
+           
+            width: 30%;
+            height: 20%;
+        }
+
+        #btnout{
+           
+            width: 30%;
+            height: 20%;
+        }
+
+    }
+
+}
+
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #111;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+
+   a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: #818181;
+     display: block;
+     transition: 0.3s;
+   }
+
+
+   .closebtn {
+     position: absolute;
+     top: 0;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 50px;
+   }
+   
+  
+}
+
+    #openBtn{
+
+        img{
+        width:180px;
+        }
+
+        
+    }
+
+
+
+
+
+ 
+
+
+
+/* The navigation menu links */
+
+
+/* When you mouse over the navigation links, change their color */
+
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+
+/* Position and style the close button (top right corner) */
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+
+ 
+}
+//Expander Widths
+
+//when 3 cards in a row
+@media screen and (min-width: 992px) {
+
+  .card:nth-of-type(3n+2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+  .card:nth-of-type(3n+3) .card__expander {
+    margin-left: calc(-200% - 60px);
+  }
+  .card:nth-of-type(3n+4) {
+    clear: left;
+  }
+  .card__expander {
+    width: calc(300% + 60px);
+  }
+
+}
+
+//when 2 cards in a row
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .card:nth-of-type(2n+2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+  .card:nth-of-type(2n+3) {
+    clear: left;
+  }
+  .card__expander {
+    width: calc(200% + 30px);
+  }
+
+}
+
+
+
+@media screen and (min-width: 266px) and (max-width: 765px){
+
+
+
+.sign-up-modal{
+  margin-top: 0%; 
+  margin-left: 25%; 
+  padding-top: 10%; 
+  width: 50%;
+
+  .modal-content{
+    padding: 3%;
+  }
+}
+
+  
+}
