@@ -8,7 +8,6 @@ include('connection.php')
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,18 +84,71 @@ include('connection.php')
     <a href="#">Contact</a>
 </div>
 
+
 </header>
 
-<body>
 
 
+
+
+
+<body onload="startTime()">
+<!-- <?php
+// date_default_timezone_set('Asia/Manila');
+//     $currentDate = date('Y-m-d');
+//      $currentTime = date('H:i:s');
+
+
+?> -->
+
+ <div id="clockdate">
+  <div class="clockdate-wrapper">
+    <div id="clock"></div>
+    <div id="date"></div>
+  </div>
+</div>
+
+<div id="dummy"></div>
+
+<!-- <form method="post" action="insert.php" enctype="multipart/form-data"> -->
 <div class="cont">
 
-    <button type="button" id="btnin" class="btn btn-success" >Time-In</button>
-     <button type="button" id="btnout" class="btn btn-danger">Time-Out</button>
+    
+<input id="username" name="username" type="text" class="form-control" value="Dianne">
+<input id="status" name="status" type="text" class="form-control">
+
+
+<?php
+$db = mysqli_connect("localhost","root","","special_project");
+ 
+// $uname   =   $_POST['username'];
+// where username='".$uname."'
+                        $sql = "SELECT * FROM user_stat where username='Dianne'";
+                        $result = mysqli_query($db,$sql);
+                        while($row=mysqli_fetch_array($result)){
+echo"<input id='statusform' name='statusform' type='text' class='form-control' value='".$row['status']."'>";
+
+
+                        }
+?>
+
+<!-- <input id="datein" name="datein" type="text" class="form-control" value="<?php// echo $currentDate ?>" >  -->
+
+<input id="timein" name="timein" type="hidden" class="form-control"> 
+<input id="datein" name="datein" type="hidden" class="form-control"> 
+
+
+
+<input id="timeout" name="timeout" type="hidden" class="form-control"> 
+<input id="dateout" name="dateout" type="hidden" class="form-control">
+
+
+<button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
+     <button type="submit" id="btnout" name='btnout' class="btn btn-danger">Time-Out</button>
 
 </div>
- 
+
+ <!-- </form> -->
 
 
 
@@ -109,7 +161,8 @@ include('connection.php')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
           
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/user.js"></script>
+    <script type="text/javascript" src="assets/js/user.js"></script> 
+   
 <!-- 
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script> -->
 </body>

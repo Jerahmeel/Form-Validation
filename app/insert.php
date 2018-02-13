@@ -69,6 +69,25 @@
 
     }
 
+
+
+
+
+ $uname   =   $_POST['username'];
+$tin   =   $_POST['timein'];
+    $din   =   $_POST['datein'];
+    $stat   =   $_POST['status'];
+    
+        
+  $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");
+
+//  $connection->query("UPDATE user_stat set status='On Work' where username='$uname' );
+$connection->query("UPDATE user_stat set status='On Work' where username='$uname' ");
+
+
+    
+
+    
   
 
 
@@ -92,3 +111,5 @@
       
 
     ?>
+
+    

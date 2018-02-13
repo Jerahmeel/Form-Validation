@@ -10,7 +10,7 @@ $turquoise: #1abc9c;
 .nav-cntainer{
   width: 100%;
   padding: 0%;
-  position: fixed;
+  position: relative;
     z-index: 1;
 
 
@@ -25,24 +25,21 @@ $turquoise: #1abc9c;
 
 
 .nav-top{
-    margin: 0;
+      margin: 0;
       background-color: rgb(90, 72, 72);
       border: none;
       border-radius: 0%;
       height: 60px;
-     
+     position: absolute;
 }
 .cont{
     width:100%;
     padding: 0;
     position: absolute;
-  
+
+
+
 } 
-
-
-
-
-
 
 
 
@@ -78,12 +75,9 @@ $turquoise: #1abc9c;
 
 
 body{
-   height:100%;
-    width:100%;
- 
+   
      background: $light-gray;
-  
-  color: $slate;
+    color: $slate;
 
     .cont{
          height:100%;
@@ -155,6 +149,38 @@ body{
 
         
     }
+
+    .clockdate-wrapper {
+    background-color: #333;
+    padding:15px;
+    max-width:400px;
+    width:100%;
+    text-align:center;
+    border-radius:5px;
+    margin:0 auto;
+    margin-top:5%;
+}
+#clock{
+    background-color:#333;
+    font-family: sans-serif;
+    font-size:45px;
+    text-shadow:0px 0px 1px #fff;
+    color:#fff;
+}
+#clock span {
+    color:#888;
+    text-shadow:0px 0px 1px #333;
+    font-size:30px;
+
+  
+}
+#date {
+    letter-spacing:10px;
+    font-size:14px;
+    font-family:arial,sans-serif;
+    color:#fff;
+}
+
 
 
 
@@ -246,3 +272,6 @@ body{
 
   
 }
+
+
+
