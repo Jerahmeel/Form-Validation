@@ -61,9 +61,10 @@
     $contNum  =   $_POST['cn'];
     $userName  =   $_POST['uname'];
     $password  =   $_POST['rpassword'];
+    $status =   $_POST['status'];
 
 
-  $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."')");
+  $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image, status) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."' ,'OUT')");
 
   header("Location:admin.php");
 
@@ -82,7 +83,7 @@ $tin   =   $_POST['timein'];
   $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");
 
 //  $connection->query("UPDATE user_stat set status='On Work' where username='$uname' );
-$connection->query("UPDATE user_stat set status='On Work' where username='$uname' ");
+$connection->query("UPDATE user_credentials set status='On Work' where username='$uname' ");
 
 
     

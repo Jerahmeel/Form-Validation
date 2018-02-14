@@ -1,14 +1,12 @@
 
 
+// var stat = $('#status').val()
+// if (stat == "statusform") {
 
-//  var uname = $('#username').val()
-//  if (uname == "" || din == "") {
+document.getElementById('btnout').disabled = true;
 
-// document.getElementById('btnout').disabled = true;
- 
-// document.getElementById('statusform').style.visibility = "visible";
-// document.getElementById('status').style.visibility = "hidden";
 // }
+
 
 $(document).ready(function () {
 //AJAX BABEH

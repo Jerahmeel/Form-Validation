@@ -1,10 +1,4 @@
-<?php
 
-
-include('connection.php')
-
-
-?>
 
 
 
@@ -101,6 +95,28 @@ include('connection.php')
 
 ?> -->
 
+<?php
+
+include('connection.php');
+session_start();  
+
+if(isset($_SESSION["username"]))  
+ {  
+    
+      echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>'; 
+      echo'<input id="username" name="username" type="text" class="form-control" value="'.$_SESSION["username"].'" > ';
+
+      echo '<br /><br /><a href="logout.php">Logout</a>';  
+        echo'<input id="status" name="status" type="text" class="form-control" value="'.$_SESSION["status"].'" > ';
+ }  
+ else  
+ {  
+      header("location:index.php");  
+ } 
+?>
+
+
+
  <div id="clockdate">
   <div class="clockdate-wrapper">
     <div id="clock"></div>
@@ -114,23 +130,36 @@ include('connection.php')
 <div class="cont">
 
     
-<input id="username" name="username" type="text" class="form-control" value="Dianne">
-<input id="status" name="status" type="text" class="form-control">
+<input id="username" name="username" type="text" class="form-control" >
+<!-- <input id="status" name="status" type="text" class="form-control"> -->
 
 
-<?php
-$db = mysqli_connect("localhost","root","","special_project");
- 
-// $uname   =   $_POST['username'];
-// where username='".$uname."'
-                        $sql = "SELECT * FROM user_stat where username='Dianne'";
-                        $result = mysqli_query($db,$sql);
-                        while($row=mysqli_fetch_array($result)){
-echo"<input id='statusform' name='statusform' type='text' class='form-control' value='".$row['status']."'>";
+<!-- <?php
+// $db = mysqli_connect("localhost","root","","special_project");
+
+// // $uname   =   $_POST['username'];
+// // where username='".$uname."'
+//                         $sql = "SELECT status FROM user_credentials";
+//                         $result = mysqli_query($db,$sql);
+//                         while($row=mysqli_fetch_array($result)){
+// echo"<input id='statusform' name='statusform' type='text' class='form-control' value='".$row['status']."'>";
 
 
-                        }
-?>
+//                         }
+?> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- <input id="datein" name="datein" type="text" class="form-control" value="<?php// echo $currentDate ?>" >  -->
 

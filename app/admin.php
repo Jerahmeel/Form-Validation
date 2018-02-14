@@ -211,6 +211,12 @@ include('connection.php')
                         </div>
                     </div>   
 
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="hidden" id="status" name="status" class="form-control" />
+                        </div>
+                    </div>   
+
                     <input type="file" name="USERIMAGE" id="USERIMAGE" accept="assets/img/userimages/*" >   
                             
                     <div class="form-group text-center">
