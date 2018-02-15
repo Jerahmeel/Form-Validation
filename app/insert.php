@@ -62,55 +62,25 @@
     $userName  =   $_POST['uname'];
     $password  =   $_POST['rpassword'];
     $status =   $_POST['status'];
+    $pos = $_POST['pos'];
+
+    $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image, status, position) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."' ,'Out' , '$pos')");
+
+    header("Location:admin.php");
+
+}
 
 
-  $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image, status) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."' ,'Out')");
-
-  header("Location:admin.php");
-
-    }
-
-
-
-
-
- $uname   =   $_POST['username'];
-$tin   =   $_POST['timein'];
+//for user(time in - time out)
+    $uname   =   $_POST['username'];
+    $tin   =   $_POST['timein'];
     $din   =   $_POST['datein'];
     $stat   =   $_POST['statusform'];
     
-        
-  $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");
+    $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");
 
-//  $connection->query("UPDATE user_stat set status='On Work' where username='$uname' );
-$connection->query("UPDATE user_credentials set status='On Work' where username='$uname' ");
+    $connection->query("UPDATE user_credentials set status='On Work' where username='$uname' ");
 
-
-    
-
-    
-  
-
-
-
-
-    // $query = $connection->query("SELECT * FROM user_credentials WHERE `username`='$userName'");
-    
-    // while($x = $query->fetch()) {
-    //     $cn = $x['username'];
-    //     if(!empty($userName)){
-    //         echo "Data is already in the database";
-    //     }
-    // }
-
-    // if(empty($userName)){
-    //     $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password')");
-    // }
-    
-    
-    
-      
-
-    ?>
+?>
 
     

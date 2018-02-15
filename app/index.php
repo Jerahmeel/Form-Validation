@@ -16,10 +16,11 @@ session_start();
            {  
                 $message = '<label>All fields are required</label>';  
                 echo '<script type="text/javascript"> alert("All fields are required!") </script>';
-           }  
-           else  
+           } 
+
+            if(!empty($_POST["username"]) || !empty($_POST["password"]))  
            {  
-                $query = "SELECT * FROM user_credentials WHERE username = :username AND password = :password";  
+                $query = "SELECT * FROM user_credentials WHERE username = :username AND password = :password AND position = 'Employee' ";  
                 $statement = $connect->prepare($query);  
                 $statement->execute(  
                      array(  
@@ -32,19 +33,43 @@ session_start();
                 $count = $statement->rowCount();  
                 if($count > 0)  
                 {  
-                     $_SESSION["username"] = $_POST["username"]; 
-                      
-                
-                   
-                     header("location:user.php");  
-                   
+                    $_SESSION["username"] = $_POST["username"]; 
+
+                    header("location:user.php");  
                 }  
                 else  
                 {  
                      $message = '<label>Wrong Data</label>';  
                      echo '<script type="text/javascript"> alert("Wrong Data!") </script>';
                 }  
-           }  
+           } 
+
+           if(!empty($_POST["username"]) || !empty($_POST["password"]))  
+           {  
+                $query = "SELECT * FROM user_credentials WHERE username = :username AND password = :password AND position = 'Admin' ";  
+                $statement = $connect->prepare($query);  
+                $statement->execute(  
+                     array(  
+                          'username'     =>     $_POST["username"],  
+                          'password'     =>     $_POST["password"]  
+                          
+                           
+                     )  
+                );  
+                $count = $statement->rowCount();  
+                if($count > 0)  
+                {  
+                    $_SESSION["username"] = $_POST["username"]; 
+
+                    header("location:admin.php");  
+                }  
+                else  
+                {  
+                     $message = '<label>Wrong Data</label>';  
+                     echo '<script type="text/javascript"> alert("Wrong Data!") </script>';
+                }  
+           }
+           
       }  
  }  
  catch(PDOException $error)  

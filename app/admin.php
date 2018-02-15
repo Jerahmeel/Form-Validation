@@ -1,13 +1,6 @@
 <?php
-
-
-include('connection.php')
-
-
+    include('connection.php')
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,10 +78,73 @@ include('connection.php')
     <a href="#">Contact</a>
 </div>
 
+
+
 </header>
 
-<body>
 
+
+
+<body onload="startTime()">
+    
+<br><br><br><br>
+    <?php
+
+        include('connection.php');
+        session_start();  
+        
+        if(isset($_SESSION["username"]))  {  
+            echo '<h3>Login Success, Welcome Admin - '.$_SESSION["username"].'</h3>'; 
+            echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
+
+            echo '<br /><br /><a href="logout.php">Logout</a>';  
+        }  
+        else  {  
+            header("location:index.php");  
+        } 
+
+    ?>
+
+    
+
+    <div id="clockdate">
+        <div class="clockdate-wrapper">
+            <div id="clock"></div>
+            <div id="date"></div>
+        </div>
+    </div>
+<br><br>
+    
+<div class="cont">  
+        
+        <?php
+            $db = mysqli_connect("localhost","root","","special_project");
+            $uname = $_SESSION["username"];
+            $sql = "SELECT status FROM user_credentials where username='$uname'";
+            $result = mysqli_query($db,$sql);
+            
+            while($row=mysqli_fetch_array($result)){
+                echo"<input id='statusform' name='statusform' type='hidden' class='form-control' value='".$row['status']."'>";
+            }
+        ?>
+
+        <input id="statusdummy" name="statusdummy" type="text" class="form-control">
+
+        <input id="timein" name="timein" type="hidden" class="form-control"> 
+        <input id="datein" name="datein" type="hidden" class="form-control"> 
+
+        <input id="timeout" name="timeout" type="hidden" class="form-control"> 
+        <input id="dateout" name="dateout" type="hidden" class="form-control">
+
+        <br> <br>
+       
+
+</div>
+    <br> <br>    <br> <br>
+ 
+
+
+        
     <div class="employee-modal ">
         <div class="container body-container">
             <div class="wrapper">
@@ -101,7 +157,7 @@ include('connection.php')
                             echo"<div class=' card [ is-collapsed ] '>";
                             echo"<div class='custom-card card__inner [ js-expander ]'>";
                             echo"<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
-                            echo"<p> '".$row['first_name']."'</p>";
+                            echo"<p><a href='profile.php?view= ".$row['username']." '>".$row['username']."</p>";
                             echo" <i class='fa fa-folder-o'></i>";
                             echo"</div>";
                             echo"<div class='card__expander'>";
@@ -111,6 +167,9 @@ include('connection.php')
                             echo"</div>";
                         }
                     ?>
+
+                    
+     
 
                     <div class=' card [ is-collapsed ] '>
                         <div class='custom-card card__inner '>
@@ -127,6 +186,9 @@ include('connection.php')
             </div>
         </div>  
     </div>
+
+  <button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
+        <button type="submit" id="btnout" name='btnout'  class="btn btn-danger">Time-Out</button>
 
     <div class="modal-dialog sign-up-modal hide">
         <div class="modal-content">
@@ -224,6 +286,16 @@ include('connection.php')
                             <span class="glyphicon glyphicon-menu-right"></span>
                         </button>
                     </div>
+
+                    <div class="form-group text-center">
+                        <div class="input-group">
+                            <select id="pos" name="pos">                      
+                                <option value="Admin">Admin</option>
+                                <option value="Employee">Employee</option>
+                            </select>
+                        </div>
+                    </div>
+                    
                 </form>
             
                 <div class="forget-pass">
@@ -241,10 +313,13 @@ include('connection.php')
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
          <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="assets/js/user1.js"></script>
     <script type="text/javascript" src="assets/js/admin.js"></script>
+   
+
+    
 <!-- 
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script> -->
 </body>
