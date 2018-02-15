@@ -8,7 +8,7 @@
     $din   =   $_POST['datein'];
       $tout   =   $_POST['timeout'];
     $dout   =   $_POST['dateout'];
-   $stat   =   $_POST['status'];
+   $stat   =   $_POST['statusform'];
 
     
         

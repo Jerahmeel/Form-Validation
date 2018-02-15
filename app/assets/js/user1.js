@@ -1,5 +1,21 @@
+stat = $('#statusform').val()
+
+if (stat == "Out") {
+    document.getElementById('btnout').disabled = true;
+    document.getElementById('btnin').disabled = false;
+    document.getElementById('statusdummy').value = 'Out';
+
+}
+
+if (stat == "On Work") {
+    document.getElementById('btnout').disabled = false;
+    document.getElementById('btnin').disabled = true;
+    document.getElementById('statusdummy').value = 'On Work';
+}
+
 $(document).ready(function () {
-//AJAX BABEH
+    //AJAX BABEH
+
     $('#btnin').on('click', function () {
         var uname = $('#username').val(),
             tin = $('#timein').val(),
@@ -7,9 +23,8 @@ $(document).ready(function () {
             tout = $('#timeout').val(),
             stat = $('#statusform').val(),
             dout = $('#dateout').val()
-        
 
-        if (uname == "" || din == "" ) {
+        if (uname == "" || din == "") {
             alert('all fields are required!');
         } else {
             $.ajax({
@@ -21,8 +36,8 @@ $(document).ready(function () {
                     timein: tin,
                     dateout: dout,
                     timeout: tout,
-                    statusform :stat
-                
+                    statusform: stat
+
                 },
                 success: function (data) {
                     $('#retrieve').html(data);
@@ -32,13 +47,15 @@ $(document).ready(function () {
                     // document.querySelector('#status').value ="On Work";
                     // document.getElementById('btnin').disabled = true;
                     document.getElementById('btnout').disabled = false;
+                    document.getElementById('btnin').disabled = true;
+                    document.getElementById('statusdummy').value = 'On Work';
                 }
             });
         }
 
     });
 
-    $('#butnout').on('click', function () {
+    $('#btnout').on('click', function () {
         var uname = $('#username').val(),
             tin = $('#timein').val(),
             din = $('#datein').val(),
@@ -70,15 +87,13 @@ $(document).ready(function () {
                     // document.querySelector('#status').value = "Out";
                     // document.getElementById('btnin').disabled = false;
                     document.getElementById('btnout').disabled = true;
+                    document.getElementById('btnin').disabled = false;
+                    document.getElementById('statusdummy').value = 'Out';
                 }
             });
         }
-
     });
-
-
 });
-
 
 
 function startTime() {
@@ -100,8 +115,6 @@ function startTime() {
     document.querySelector('#datein').value = dd + " / " + mm + " / " + yy;
     document.querySelector('#dateout').value = dd + " / " + mm + " / " + yy;
     var time = setTimeout(function () { startTime() }, 500);
-
-
 
 }
 

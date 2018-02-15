@@ -64,7 +64,7 @@
     $status =   $_POST['status'];
 
 
-  $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image, status) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."' ,'OUT')");
+  $connection->query("INSERT INTO user_credentials (first_name, middle_name, last_name, email_address, contact_number, username, password, user_image, status) VALUES ('$firstName', '$middleName', '$lastName', '$emailAdd', '$contNum', '$userName','$password', '".$newname."' ,'Out')");
 
   header("Location:admin.php");
 
@@ -77,7 +77,7 @@
  $uname   =   $_POST['username'];
 $tin   =   $_POST['timein'];
     $din   =   $_POST['datein'];
-    $stat   =   $_POST['status'];
+    $stat   =   $_POST['statusform'];
     
         
   $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");

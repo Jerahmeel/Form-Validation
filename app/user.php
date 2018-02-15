@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,8 +65,6 @@
         <!--/.container-fluid -->
     </nav>
 
-     
-
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">About</a>
@@ -78,122 +73,74 @@
     <a href="#">Contact</a>
 </div>
 
-
 </header>
 
 
-
-
-
-
 <body onload="startTime()">
-<!-- <?php
-// date_default_timezone_set('Asia/Manila');
-//     $currentDate = date('Y-m-d');
-//      $currentTime = date('H:i:s');
 
+    <?php
 
-?> -->
+        include('connection.php');
+        session_start();  
+        
+        if(isset($_SESSION["username"]))  {  
+            echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>'; 
+            echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
 
-<?php
+            echo '<br /><br /><a href="logout.php">Logout</a>';  
+        }  
+        else  {  
+            header("location:index.php");  
+        } 
 
-include('connection.php');
-session_start();  
+    ?>
 
-if(isset($_SESSION["username"]))  
- {  
-    
-      echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>'; 
-      echo'<input id="username" name="username" type="text" class="form-control" value="'.$_SESSION["username"].'" > ';
+    <div id="clockdate">
+        <div class="clockdate-wrapper">
+            <div id="clock"></div>
+            <div id="date"></div>
+        </div>
+    </div>
 
-      echo '<br /><br /><a href="logout.php">Logout</a>';  
-        echo'<input id="status" name="status" type="text" class="form-control" value="'.$_SESSION["status"].'" > ';
- }  
- else  
- {  
-      header("location:index.php");  
- } 
-?>
+    <div class="cont">  
+        
+        <?php
+            $db = mysqli_connect("localhost","root","","special_project");
+            $uname = $_SESSION["username"];
+            $sql = "SELECT status FROM user_credentials where username='$uname'";
+            $result = mysqli_query($db,$sql);
+            
+            while($row=mysqli_fetch_array($result)){
+                echo"<input id='statusform' name='statusform' type='hidden' class='form-control' value='".$row['status']."'>";
+            }
+        ?>
 
+        <input id="statusdummy" name="statusdummy" type="text" class="form-control">
 
+        <input id="timein" name="timein" type="hidden" class="form-control"> 
+        <input id="datein" name="datein" type="hidden" class="form-control"> 
 
- <div id="clockdate">
-  <div class="clockdate-wrapper">
-    <div id="clock"></div>
-    <div id="date"></div>
-  </div>
-</div>
+        <input id="timeout" name="timeout" type="hidden" class="form-control"> 
+        <input id="dateout" name="dateout" type="hidden" class="form-control">
 
-<div id="dummy"></div>
-
-<!-- <form method="post" action="insert.php" enctype="multipart/form-data"> -->
-<div class="cont">
-
-    
-<input id="username" name="username" type="text" class="form-control" >
-<!-- <input id="status" name="status" type="text" class="form-control"> -->
-
-
-<!-- <?php
-// $db = mysqli_connect("localhost","root","","special_project");
-
-// // $uname   =   $_POST['username'];
-// // where username='".$uname."'
-//                         $sql = "SELECT status FROM user_credentials";
-//                         $result = mysqli_query($db,$sql);
-//                         while($row=mysqli_fetch_array($result)){
-// echo"<input id='statusform' name='statusform' type='text' class='form-control' value='".$row['status']."'>";
-
-
-//                         }
-?> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <input id="datein" name="datein" type="text" class="form-control" value="<?php// echo $currentDate ?>" >  -->
-
-<input id="timein" name="timein" type="hidden" class="form-control"> 
-<input id="datein" name="datein" type="hidden" class="form-control"> 
-
-
-
-<input id="timeout" name="timeout" type="hidden" class="form-control"> 
-<input id="dateout" name="dateout" type="hidden" class="form-control">
-
-
-<button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
-     <button type="submit" id="btnout" name='btnout' class="btn btn-danger">Time-Out</button>
-
-</div>
+        <br> <br>
+        <button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
+        <button type="submit" id="btnout" name='btnout'  class="btn btn-danger">Time-Out</button>
+   
+    </div>
 
  <!-- </form> -->
-
-
 
 <!-- Latest compiled and minified JavaScript -->
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-         <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
+        <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>   
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/user.js"></script> 
-   
-<!-- 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script> -->
+    <script type="text/javascript" src="assets/js/user1.js"></script>  
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script> -->
 </body>
 
 
