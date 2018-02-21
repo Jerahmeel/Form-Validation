@@ -12,6 +12,7 @@ $turquoise: #1abc9c;
   padding: 0%;
   position: relative;
     z-index: 1;
+       position: fixed;
 
 
     .nav-cntents{
@@ -32,14 +33,7 @@ $turquoise: #1abc9c;
       height: 60px;
      position: absolute;
 }
-.cont{
-    width:100%;
-    padding: 0;
-    position: absolute;
 
-
-
-} 
 
 
 
@@ -71,22 +65,22 @@ $turquoise: #1abc9c;
   color: #f1f1f1;
 }
 
-
-
-
-body{
    
-     background: $light-gray;
-    color: $slate;
-
+.divider{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
     .cont{
-         height:100%;
-    width:100%;
-    padding: 10%;
-
-    #statusdummy{
-     background-color: #818181;
-    }
+        background-color: white;
+        padding: 5%;
+        width: 60%;
+        position: fixed;
+        height: auto;
+        margin: 5%;
+        
+         #statusdummy{
+          background-color: #818181;
+        }
         #btnin{
            
             width: 30%;
@@ -101,8 +95,47 @@ body{
         }
 
     }
+    .board{
+    width: 30%;
+    min-height: 100%;
+    height: auto;
+    float: right;
+    background-color: #333;
+    padding:1%;
+    P{
+      color: #eceef1;
+    }
+      .ann-card {
+      
+        height: auto;
+        width: 95%;
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+        margin: 10px;
+        padding: 3%;
+        .ann-img{
+          float: left;
+          height:10%;
+          width:15%;
+          border-radius: 50px;
+          margin-right: 3%;
+        }
+        #ann_name{
 
+            padding: 10px 10px;
+            font-size: 20px;
+            color: rgba(51, 4, 4, 0.897);
+          }
+           #ann_msg{
+          margin: 0;
+          padding: 10px;
+          font-size: 16px; 
+  }
+        
 }
+
+    }
+  }
 
 .sidenav {
   height: 100%;

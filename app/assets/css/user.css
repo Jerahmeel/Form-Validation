@@ -7,6 +7,7 @@
   padding: 0%;
   position: relative;
   z-index: 1;
+  position: fixed;
 }
 .nav-cntainer .nav-cntents {
   background-color: #faf6f6;
@@ -20,12 +21,6 @@
   border: none;
   border-radius: 0%;
   height: 60px;
-  position: absolute;
-}
-
-.cont {
-  width: 100%;
-  padding: 0;
   position: absolute;
 }
 
@@ -52,25 +47,65 @@
   color: #f1f1f1;
 }
 
-body {
-  background: #eceef1;
-  color: #333a45;
-}
-body .cont {
-  height: 100%;
+.divider {
   width: 100%;
-  padding: 10%;
+  height: 100vh;
+  background-color: #ffffff;
 }
-body .cont #statusdummy {
+.divider .cont {
+  background-color: white;
+  padding: 5%;
+  width: 60%;
+  position: fixed;
+  height: auto;
+  margin: 5%;
+}
+.divider .cont #statusdummy {
   background-color: #818181;
 }
-body .cont #btnin {
+.divider .cont #btnin {
   width: 30%;
   height: 20%;
 }
-body .cont #btnout {
+.divider .cont #btnout {
   width: 30%;
   height: 20%;
+}
+.divider .board {
+  width: 30%;
+  min-height: 100%;
+  height: auto;
+  float: right;
+  background-color: #333;
+  padding: 1%;
+}
+.divider .board P {
+  color: #eceef1;
+}
+.divider .board .ann-card {
+  height: auto;
+  width: 95%;
+  background: white;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 3%;
+}
+.divider .board .ann-card .ann-img {
+  float: left;
+  height: 10%;
+  width: 15%;
+  border-radius: 50px;
+  margin-right: 3%;
+}
+.divider .board .ann-card #ann_name {
+  padding: 10px 10px;
+  font-size: 20px;
+  color: rgba(51, 4, 4, 0.897);
+}
+.divider .board .ann-card #ann_msg {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .sidenav {

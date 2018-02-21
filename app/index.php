@@ -34,8 +34,9 @@ session_start();
                 if($count > 0)  
                 {  
                     $_SESSION["username"] = $_POST["username"]; 
-
+                      
                     header("location:user.php");  
+              
                 }  
                 else  
                 {  
@@ -60,8 +61,9 @@ session_start();
                 if($count > 0)  
                 {  
                     $_SESSION["username"] = $_POST["username"]; 
-
+                     
                     header("location:admin.php");  
+                   
                 }  
                 else  
                 {  

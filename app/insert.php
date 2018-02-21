@@ -75,9 +75,8 @@
     $uname   =   $_POST['username'];
     $tin   =   $_POST['timein'];
     $din   =   $_POST['datein'];
-    $stat   =   $_POST['statusform'];
-    
-    $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in) VALUES ('$uname','$tin','$din')");
+  
+    $connection->query("INSERT INTO time_in_out (user_name, time_in,date_in,status) VALUES ('$uname','$tin','$din','On Work')");
 
     $connection->query("UPDATE user_credentials set status='On Work' where username='$uname' ");
 

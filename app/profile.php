@@ -1,5 +1,6 @@
 <?php
-    include('connection.php')
+    include('connection.php');
+  
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +34,26 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span id="openBtn" onclick="openNav()"><img src="assets/img/kestrellogo.png" alt=""></span>
+
+
+                  <?php
+
+        include('connection.php');
+        session_start();  
+        
+        if(isset($_SESSION["username"]))  {  
+            echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>'; 
+            echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
+
+            // echo '<br /><br /><a href="logout.php">Logout</a>';  
+        }  
+        else  {  
+            header("location:index.php");  
+        } 
+
+    ?>
+
+    
             </div>
             <div id="navbar" class="navbar-collapse collapse">
 
@@ -91,30 +112,60 @@
     <div class="employee-modal ">
         <div class="container body-container">
             <div class="wrapper">
-                <div class="cards">
+ 
                     <?php
                         $uname = $_GET['view'];
                         $db = mysqli_connect("localhost","root","","special_project");
                         $sql = "SELECT * FROM user_credentials where username='$uname'";
+                       
                         $result = mysqli_query($db,$sql);
+                  
+                       
                         while($row=mysqli_fetch_array($result)){
                             echo"<div class=' card [ is-collapsed ] '>";
-                            echo"<div class='custom-card card__inner [ js-expander ]'>";
+                            echo"<div class='custom-card card__inner'>";
                             echo"<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
                             echo"<p> ".$row['first_name']."</p>";
-                            echo" <i class='fa fa-folder-o'></i>";
+                           
                             echo"</div>";
                             echo"</div>";
+                             echo"<p> ".$row['email_address']."</p>";
+                            echo"<p> ".$row['contact_number']."</p>";
+                            echo"<p> ".$row['status']."</p>";
                         }
                     ?>
-                </div>
+            
             </div>
         </div>  
     </div>
-     
-          
+
+       
       
- 
+     
+    <div class="employee-modal ">
+        <div class="container body-container">
+        
+                    <?php
+                        $uname = $_GET['view'];
+                        $db = mysqli_connect("localhost","root","","special_project");
+                        $sql = "SELECT * FROM time_in_out where user_name='$uname'";
+                       
+                        $result = mysqli_query($db,$sql);
+                  
+                       
+                        while($row=mysqli_fetch_array($result)){
+                      
+                            echo"<p> Date--------".$row['date_in']."</p> ";
+                            echo"<p> Time In-----".$row['time_in']."</p>"; 
+                            echo"<p> Time Out----".$row['time_out']."</p> <br><br>";
+                            
+                       
+                        }
+                    ?>
+             
+        </div>  
+    </div>
+
 
 
 <!-- Latest compiled and minified JavaScript -->

@@ -38,16 +38,55 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
-                            <span class="caret"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                         <?php
+                            include('connection.php');
+                            session_start();  
+                            if(isset($_SESSION["username"]))  {  
+
+
+                                $uname = $_SESSION["username"];
+                                $db = mysqli_connect("localhost","root","","special_project");
+                                $sql = "SELECT user_image FROM user_credentials where username='$uname' ";
+                                $result = mysqli_query($db,$sql);
+                        
+                                while($row=mysqli_fetch_array($result)){
+                                        echo '<input id="user_img" name="user_img" type="hidden" class="form-control" value="'.$row["user_image"].'" > '; 
+                                        echo "<p><img class='crd-img' src='".$row['user_image']."'width='10%' height='10%'></p>";
+                                         echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
+                                }
+
+
+
+                                // echo '<p>'.$_SESSION["username"].'</p>'; 
+                                // // echo'<span class="caret"></span>';
+                                // echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
+                                // // echo '<br /><br /><a href="logout.php">Logout</a>';  
+                            }  
+                            else  {  
+                                header("location:index.php");  
+                            } 
+                        ?>
+
+
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Action</a>
-                            </li>
-                            <li>
-                                <a href="#">Another action</a>
-                            </li>
+                             <?php
+                                echo '<li>';
+                                    echo '<a href="logout.php">Logout</a>';
+                                echo '</li>';
+                                $uname = $_SESSION["username"];
+                                $db = mysqli_connect("localhost","root","","special_project");
+                                $sql = "SELECT username FROM user_credentials where username='$uname' ";
+                                $result = mysqli_query($db,$sql);
+                        
+                                while($row=mysqli_fetch_array($result)){
+                                    echo '<li>';
+                                        echo "<a href='user_profile.php?view=".$row['username']." '>View Profile</a>";
+                                    echo '</li>';
+                                }
+                            ?>
+
                             <li>
                                 <a href="#">Something else here</a>
                             </li>
@@ -88,26 +127,9 @@
 <body onload="startTime()">
     
 <br><br><br><br>
-    <?php
-
-        include('connection.php');
-        session_start();  
         
-        if(isset($_SESSION["username"]))  {  
-            echo '<h3>Login Success, Welcome Admin - '.$_SESSION["username"].'</h3>'; 
-            echo'<input id="username" name="username" type="hidden" class="form-control" value="'.$_SESSION["username"].'" > ';
-
-            echo '<br /><br /><a href="logout.php">Logout</a>';  
-        }  
-        else  {  
-            header("location:index.php");  
-        } 
-
-    ?>
-
-    
-
-    <div id="clockdate">
+    <div class="employee-modal ">
+      <div id="clockdate">
         <div class="clockdate-wrapper">
             <div id="clock"></div>
             <div id="date"></div>
@@ -119,7 +141,7 @@
         
         <?php
             $db = mysqli_connect("localhost","root","","special_project");
-            $uname = $_SESSION["username"];
+            $uname = $_SESSION["username"]; 
             $sql = "SELECT status FROM user_credentials where username='$uname'";
             $result = mysqli_query($db,$sql);
             
@@ -129,23 +151,22 @@
         ?>
 
         <input id="statusdummy" name="statusdummy" type="text" class="form-control">
-
         <input id="timein" name="timein" type="hidden" class="form-control"> 
         <input id="datein" name="datein" type="hidden" class="form-control"> 
-
         <input id="timeout" name="timeout" type="hidden" class="form-control"> 
         <input id="dateout" name="dateout" type="hidden" class="form-control">
 
         <br> <br>
+
+     
        
 
 </div>
     <br> <br>    <br> <br>
- 
+  
 
 
-        
-    <div class="employee-modal ">
+
         <div class="container body-container">
             <div class="wrapper">
                 <div class="cards">
@@ -153,18 +174,14 @@
                         $db = mysqli_connect("localhost","root","","special_project");
                         $sql = "SELECT * FROM user_credentials";
                         $result = mysqli_query($db,$sql);
+                       
                         while($row=mysqli_fetch_array($result)){
-                            echo"<div class=' card [ is-collapsed ] '>";
-                            echo"<div class='custom-card card__inner [ js-expander ]'>";
-                            echo"<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
-                            echo"<p><a href='profile.php?view= ".$row['username']." '>".$row['username']."</p>";
-                            echo" <i class='fa fa-folder-o'></i>";
-                            echo"</div>";
-                            echo"<div class='card__expander'>";
-                            echo"<i class='fa fa-close [ js-collapser ]'></i>";
-                            echo" Expander";
-                            echo" </div>";
-                            echo"</div>";
+                            echo "<div class=' card [ is-collapsed ] '>";
+                            echo "<div class='custom-card card__inner'>";
+                            echo "<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
+                            echo "<p><a href='profile.php?view=".$row['username']." '>".$row['username']."</p>";
+                            echo "</div>";
+                            echo "</div>";
                         }
                     ?>
 
@@ -185,10 +202,18 @@
                 </div>
             </div>
         </div>  
+         <button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
+        <button type="submit" id="btnout" name='btnout'  class="btn btn-danger">Time-Out</button>
+        <br><br>
+
+
+           <input id="ann" name="ann" type="text" class="form-control" placeholder="Type Here..." />
+           <br>
+             <button type="submit" id="annpost" name='annpost'  class="btn btn-success">Post</button>
+           <br><br><br><br><br>
     </div>
 
-  <button type="submit" id="btnin" name='btnin'  class="btn btn-success">Time-In</button>
-        <button type="submit" id="btnout" name='btnout'  class="btn btn-danger">Time-Out</button>
+        
 
     <div class="modal-dialog sign-up-modal hide">
         <div class="modal-content">
@@ -317,6 +342,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
      <script type="text/javascript" src="assets/js/user1.js"></script>
     <script type="text/javascript" src="assets/js/admin.js"></script>
+     <script type="text/javascript" src="assets/js/announce.js"></script>
    
 
     
