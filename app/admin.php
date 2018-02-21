@@ -207,7 +207,7 @@
         <br><br>
 
 
-           <input id="ann" name="ann" type="text" class="form-control" placeholder="Type Here..." />
+           <textarea  id="ann" name="ann" type="text" class="form-control" placeholder="Type Here..." > </textarea>
            <br>
              <button type="submit" id="annpost" name='annpost'  class="btn btn-success">Post</button>
            <br><br><br><br><br>

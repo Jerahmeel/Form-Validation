@@ -103,29 +103,7 @@
 <div class="divider">
         
         
-    <div class="board">
-        <br> <br> <br> <br> <br> 
-        <p>REMINDERS:</p>
-         <?php
-        $uname = $_SESSION["username"];
-        $db = mysqli_connect("localhost","root","","special_project");
-        $sql = "SELECT * FROM announcement ";
-        // $sql = "SELECT user_image FROM user_credentials  where username='$uname' ";
-        $result = mysqli_query($db,$sql);
-                        
-        while($row=mysqli_fetch_array($result)){
-
-
-            echo '<div class="ann-card">';
-            echo'<img class="ann-img" src="'.$row['user_image'].'" width="10%" height="10%" />';
-            echo '<p id="ann_name">'.$row["username"].'</p>';
-            echo '<p  id="ann_msg">'.$row["announcement"].'</p>';
-            echo '</div>';
-        }
-        ?>
-       
-
-    </div>
+    
 
     <div class="cont">                         
         <div id="clockdate">
@@ -145,6 +123,7 @@
             }
         ?>
         <input id="statusdummy" name="statusdummy" type="text" class="form-control">
+        
         <input id="timein" name="timein" type="hidden" class="form-control"> 
         <input id="datein" name="datein" type="hidden" class="form-control"> 
         <input id="timeout" name="timeout" type="hidden" class="form-control"> 

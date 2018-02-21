@@ -80,6 +80,12 @@ session_start();
  }  
 ?>
 
+
+
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -91,17 +97,23 @@ session_start();
     <title>Kestrel-DDM</title>
 </head>
 <body>
-    <div class="logo">
-        <img src="assets/img/kestrellogo.png" alt="">
-    </div>
+    
 
     <div id="retrieve"></div>
 
-    <div class="modal-dialog login-in-modal">
+    <div class="row main-row">
+      
+        <div class="col-sm-8 log-box">
+              <div class="logo">
+        <img src="assets/img/kestrellogo.png" alt="">
+    </div>
+    <div class="main-container">
+    <div class="modal-dialog login-in-modal" id="logincont">
         <div class="modal-content">
             <div class="login-text">                     
                 <h2>Login</h2>
             </div>
+            
             <div class="modal-body">
                 <form action="index.php" method="post" role="form">
                     <div class="form-group">
@@ -131,6 +143,35 @@ session_start();
         </div>
     </div>
 
+    
+    </div>
+</div>
+
+ <div class="col-sm-4 rem-box">
+     <!-- <div class="board"> -->
+       
+        <p id="rem">REMINDERS:</p>
+         <?php
+     
+        $db = mysqli_connect("localhost","root","","special_project");
+        $sql = "SELECT * FROM announcement ";
+        // $sql = "SELECT user_image FROM user_credentials  where username='$uname' ";
+        $result = mysqli_query($db,$sql);
+                        
+        while($row=mysqli_fetch_array($result)){
+
+
+            echo '<div class="ann-card">';
+            echo'<img class="ann-img" src="'.$row['user_image'].'" width="10%" height="10%" />';
+            echo '<p id="ann_name">'.$row["username"].'</p>';
+            echo '<p  id="ann_msg">'.$row["announcement"].'</p>';
+            echo '</div>';
+        }
+        ?>
+       
+
+    <!-- </div> -->
+</div>
     
     </div>
     <!-- Latest compiled and minified JavaScript -->

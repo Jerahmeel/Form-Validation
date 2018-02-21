@@ -71,7 +71,9 @@
   width: 30%;
   height: 20%;
 }
-.divider .board {
+
+.board {
+  margin-top: 0;
   width: 30%;
   min-height: 100%;
   height: auto;
@@ -79,10 +81,11 @@
   background-color: #333;
   padding: 1%;
 }
-.divider .board P {
+.board #rem {
   color: #eceef1;
+  font-size: 200%;
 }
-.divider .board .ann-card {
+.board .ann-card {
   height: auto;
   width: 95%;
   background: white;
@@ -90,19 +93,19 @@
   margin: 10px;
   padding: 3%;
 }
-.divider .board .ann-card .ann-img {
+.board .ann-card .ann-img {
   float: left;
   height: 10%;
   width: 15%;
   border-radius: 50px;
   margin-right: 3%;
 }
-.divider .board .ann-card #ann_name {
+.board .ann-card #ann_name {
   padding: 10px 10px;
   font-size: 20px;
   color: rgba(51, 4, 4, 0.897);
 }
-.divider .board .ann-card #ann_msg {
+.board .ann-card #ann_msg {
   margin: 0;
   padding: 10px;
   font-size: 16px;

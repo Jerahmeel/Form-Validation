@@ -1,160 +1,105 @@
-.logo {
+.main-row {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: #f3f3f3;
+  margin: 0;
+}
+.main-row .log-box {
+  position: fixed;
+  height: 100vh;
+  padding: 150px 50px 150px 50px;
+}
+.main-row .log-box .logo {
   text-align: center;
 }
-.logo img {
+.main-row .log-box .logo img {
   margin-top: 20px;
   height: 100px;
   width: 300px;
 }
-
-.modal-dialog {
+.main-row .log-box .main-container {
+  width: 100%;
+}
+.main-row .log-box .main-container .modal-dialog {
   padding-top: 1%;
   padding-bottom: 4%;
+  width: 60%;
+  margin: 0 20%;
 }
-.modal-dialog .modal-content {
+.main-row .log-box .main-container .modal-dialog .modal-content {
   background-color: #fafafa;
   opacity: 0.9;
 }
-.modal-dialog .modal-content .login-text {
+.main-row .log-box .main-container .modal-dialog .modal-content .login-text {
   text-align: center;
   color: black;
 }
-.modal-dialog .modal-content .sign-up {
+.main-row .log-box .main-container .modal-dialog .modal-content .sign-up {
   text-align: center;
 }
-.modal-dialog .modal-content .sign-up a {
+.main-row .log-box .main-container .modal-dialog .modal-content .sign-up a {
   color: black;
 }
-.modal-dialog .modal-content .sign-up h5 {
+.main-row .log-box .main-container .modal-dialog .modal-content .sign-up h5 {
   color: #b1aaaa;
 }
-.modal-dialog .modal-content .btn-link {
+.main-row .log-box .main-container .modal-dialog .modal-content .btn-link {
   color: white;
 }
-.modal-dialog .modal-content .login-button {
+.main-row .log-box .main-container .modal-dialog .modal-content .login-button {
   float: right;
   padding-left: 1%;
   padding-right: 1%;
   width: 30%;
 }
-.modal-dialog .modal-content .forget-pass {
+.main-row .log-box .main-container .modal-dialog .modal-content .forget-pass {
   text-align: left;
 }
-.modal-dialog .modal-content .forget-pass a {
+.main-row .log-box .main-container .modal-dialog .modal-content .forget-pass a {
   color: black;
 }
-.modal-dialog .modal-content .modal-heading h2 {
+.main-row .log-box .main-container .modal-dialog .modal-content .modal-heading h2 {
   color: #ffffff;
+}
+.main-row .rem-box {
+  padding: 0;
+  background-color: #2c2b2b;
+  min-height: 100vh;
+  height: auto;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+}
+.main-row .rem-box #rem {
+  color: #eceef1;
+  font-size: 200%;
+}
+.main-row .rem-box .ann-card {
+  height: auto;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 1%;
+  padding: 3%;
+}
+.main-row .rem-box .ann-card .ann-img {
+  float: left;
+  height: 10%;
+  width: 15%;
+  border-radius: 50px;
+  margin-right: 3%;
+}
+.main-row .rem-box .ann-card #ann_name {
+  padding: 10px 10px;
+  font-size: 20px;
+  color: rgba(51, 4, 4, 0.897);
+}
+.main-row .rem-box .ann-card #ann_msg {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=index.css.map */
-body {
-font-family: 'Roboto Condensed', sans-serif;
-}
-h1
-{
-text-align: center;
-background-color: #FEFFED;
-height: 70px;
-color: rgb(95, 89, 89);
-margin: 0 0 -29px 0;
-padding-top: 14px;
-border-radius: 10px 10px 0 0;
-font-size: 35px;
-}
-.main {
-position: absolute;
-top: 50px;
-left: 20%;
-width: 450px;
-height:530px;
-border: 2px solid gray;
-border-radius: 10px;
-}
-.main label{
-color: rgba(0, 0, 0, 0.71);
-margin-left: 60px;
-}
-#image_preview{
-position: absolute;
-font-size: 30px;
-top: 100px;
-left: 100px;
-width: 250px;
-height: 230px;
-text-align: center;
-line-height: 180px;
-font-weight: bold;
-color: #C0C0C0;
-background-color: #FFFFFF;
-overflow: auto;
-}
-#selectImage{
-padding: 19px 21px 14px 15px;
-position: absolute;
-bottom: 0px;
-width: 414px;
-background-color: #FEFFED;
-border-radius: 10px;
-}
-.submit{
-font-size: 16px;
-background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
-border: 1px solid #e5a900;
-color: #4E4D4B;
-font-weight: bold;
-cursor: pointer;
-width: 300px;
-border-radius: 5px;
-padding: 10px 0;
-outline: none;
-margin-top: 20px;
-margin-left: 15%;
-}
-.submit:hover{
-background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
-}
-#file {
-color: red;
-padding: 5px;
-border: 5px solid #8BF1B0;
-background-color: #8BF1B0;
-margin-top: 10px;
-border-radius: 5px;
-box-shadow: 0 0 15px #626F7E;
-margin-left: 15%;
-width: 72%;
-}
-#message{
-position:absolute;
-top:120px;
-left:815px;
-}
-#success
-{
-color:green;
-}
-#invalid
-{
-color:red;
-}
-#line
-{
-margin-top: 274px;
-}
-#error
-{
-color:red;
-}
-#error_message
-{
-color:blue;
-}
-#loading
-{
-display:none;
-position:absolute;
-top:50px;
-left:850px;
-font-size:25px;
-}
