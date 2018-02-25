@@ -1,5 +1,8 @@
 <?php
     include('connection.php')
+  
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +45,10 @@
                          <?php
                             include('connection.php');
                             session_start();  
-                            if(isset($_SESSION["username"]))  {  
-
-
+                                   
+                            if(isset($_SESSION["password"]))  {  
+                                    
+                                
                                 $uname = $_SESSION["username"];
                                 $db = mysqli_connect("localhost","root","","special_project");
                                 $sql = "SELECT user_image FROM user_credentials where username='$uname' ";
@@ -64,6 +68,7 @@
                                 // // echo '<br /><br /><a href="logout.php">Logout</a>';  
                             }  
                             else  {  
+                               
                                 header("location:index.php");  
                             } 
                         ?>
@@ -180,13 +185,14 @@
                             echo "<div class='custom-card card__inner'>";
                             echo "<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
                             echo "<p><a href='profile.php?view=".$row['username']." '>".$row['username']."</p>";
+                            echo " <a href='#' class='btn btn-link' id='up'>Update</a>";
                             echo "</div>";
                             echo "</div>";
                         }
                     ?>
 
                     
-     
+     <a href="#" class="btn btn-link" id="up">Update</a>
 
                     <div class=' card [ is-collapsed ] '>
                         <div class='custom-card card__inner '>
@@ -221,9 +227,13 @@
                 <h2>Sign Up</h2>
             </div>
             <div class="sign-up">
-                <h5>already have an Account?<a href="#" class="btn btn-link" id="log-in">Log In</a></h5>
+                <!-- <h5>already have an Account?<a href="#" class="btn btn-link" id="log-in">Log In</a></h5> -->
             </div>
             <div class="modal-body">
+
+            <button type="submit" id="log-in" name='log-in' class="btn btn-danger btn-lg login-button">Back
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                        </button><br><br>
             <!-- form was here -->                 
                 <form method="post" action="insert.php" enctype="multipart/form-data">
                     <div class="form-group">

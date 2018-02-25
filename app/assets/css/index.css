@@ -8,7 +8,7 @@
 .main-row .log-box {
   position: fixed;
   height: 100vh;
-  padding: 150px 50px 150px 50px;
+  padding: 100px 50px 150px 50px;
 }
 .main-row .log-box .logo {
   text-align: center;
@@ -17,6 +17,15 @@
   margin-top: 20px;
   height: 100px;
   width: 300px;
+}
+.main-row .log-box .user-img {
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+}
+.main-row .log-box .user-img img {
+  height: 100px;
+  width: 100px;
 }
 .main-row .log-box .main-container {
   width: 100%;

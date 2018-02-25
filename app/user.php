@@ -37,8 +37,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <?php
                             include('connection.php');
-                            session_start();  
-                            if(isset($_SESSION["username"]))  {  
+                            session_start(); 
+                             
+                            if(isset($_SESSION["password"]))  {  
                                  
                                 $uname = $_SESSION["username"];
                                 $db = mysqli_connect("localhost","root","","special_project");
