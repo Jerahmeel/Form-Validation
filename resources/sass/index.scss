@@ -1,173 +1,139 @@
-// .top-row{
-//   width: 100%;
-
-// height: auto;
-// background-color: #f55959;
-// margin:0;
-
-// .floating-box {
-//     display: inline-block;
-//     width: 5%;
-//     height: 10%;
-//     margin: 2px;
-
-//     #card-image{
-//       width: 100%;
-//     height: 10%;
-//     }
-// }
-// }
-
-
+//INDEX PHP
 .main-row{
-width: 100%;
-min-height: 100vh;
-height: auto;
-background-color: #f3f3f3;
-margin:0;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #f3f3f3;
+    margin:0;
 
 
-.log-box{
+  .log-box{
 
-  position: fixed;
-  height: 100vh;
-  padding: 100px 50px 150px 50px;
+    height: 100vh;
+    padding: 90px 50px 150px 50px;
+    position: fixed; 
 
-.logo{
-    text-align: center;
-    img{
-    margin-top:20px; 
-    height: 100px;
-    width: 300px;
-    } 
-}
-.user-img{
-    text-align: center;
-     display: inline-block;
-     margin: 2px;
-    img{
-    
-    height: 100px;
-    width: 100px;
-    } 
-}
-.main-container{
-
-  width:100%;
-
-  
-.modal-dialog{
-  padding-top: 1%;
-  padding-bottom: 4%;
-  width:60%;
-  margin: 0 20%;
-
-  .modal-content{
-    background-color: rgb(250, 250, 250);
-    opacity: 0.9;
-
-  .login-text{
-    text-align: center;
-    color: black;
-  }
-  .sign-up{
-    text-align: center;
-  a{
-    color: black;
-  }
-  h5{
-    color: #b1aaaa;
-  }
-
-}
-
-.btn-link{
-color:white;
-}
-
-.login-button{
-float: right;
-padding-left: 1%;
-padding-right: 1%;
-width: 30%;
-}
-
-.forget-pass{
-text-align: left;
-
-a{
-color: black;
-}
-
-
-}
-.modal-heading h2{
-color:#ffffff;
-}
-}
-}
- 
-
-}
-}
-
-
-
-
-.rem-box{
- padding:0; 
- background-color: rgb(44, 43, 43);
- min-height: 100vh;
- height: auto;
- padding-top: 50px;
- padding-left: 10px; 
- padding-right: 10px; 
- float: right;
-
-// .board{
-//     margin-top:0; 
-//     width: 90%;
-//     min-height: 100vh;
-//     height: auto;
-//     float: right;
-    
-//     background-color: #333;
-   
-    #rem{
-      color: #eceef1;
-      font-size: 200%;
-    }
-      .ann-card {
-      
-        height: auto;
-        width: 100%;
-        background: rgb(255, 255, 255);
-        border-radius: 20px;
-        margin-bottom:1%; 
-        padding: 3%;
-       
-        .ann-img{
-          float: left;
-          height:10%;
-          width:15%;
-          border-radius: 50px;
-          margin-right: 3%;
+        .logo{
+            text-align: center;
+            
+            img{
+            margin-top:20px; 
+            margin-bottom:40px;
+            height: 100px;
+            width: 300px;
+            } 
         }
-        #ann_name{
-            padding: 10px 10px;
-            font-size: 20px;
-            color: rgba(51, 4, 4, 0.897);
-          }
-           #ann_msg{
-          margin: 0;
-          padding: 10px;
-          font-size: 16px; 
-  }
         
+        .user-img{
+            display: inline-flex;
+            flex-flow: row wrap;
+            width: 100%;  
+            margin: 0;
+            
+            .selectuser{
+                border: none;
+                background-color: white;
+                margin: 2px;
+                
+                img{
+                    height: 180px;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .rem-box{
+        padding:0; 
+        background-color: rgb(44, 43, 43);
+        min-height: 100vh;
+        height: auto;
+        padding-top: 50px;
+        padding-left: 10px; 
+        padding-right: 10px; 
+        float: right;
+
+        #rem{
+            color: #eceef1;
+            font-size: 200%;
+        }
+
+        .ann-card {
+            min-height: 10vh;
+            height: auto;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            margin-bottom:1%; 
+            padding: 3%;
+        
+            .u-cont{
+                text-align: center;
+                border-right: solid black 2px;
+                .ann-img{
+                height:30%;
+                width:35%;
+                border-radius: 50px;
+                
+                }
+
+                #ann_name{
+                    padding: 10px 10px;
+                    font-size: 20px;
+                    color: rgba(51, 4, 4, 0.897);
+                }
+            }
+            
+            .a-cont{
+                #ann_msg{
+                    margin: 0;
+                    padding: 10px;
+                    font-size: 16px; 
+                }
+            }        
+        }
+    }
 }
-}
-// }    
+//END OF CODE
 
 
+//LOGIN PHP
+.main-container{
+    width:100%;
+   
+    #logincont{
+        margin-top: 8%;
+       
+     
+        .modal-content{
+            background-color: rgb(250, 250, 250);
+            opacity: 0.9;
+            text-align: center;
+            box-shadow: none;
 
+            .login-text{
+                color: rgb(143, 35, 35);
+            }
+
+            .user-image{
+                width: 100%;
+                height: 100%;
+                margin-bottom:3%; 
+                img{
+                    width: 30%;
+                    height: 10%;
+                }
+            }
+    
+            .login-button{
+            float: right;
+            padding-left: 1%;
+            padding-right: 1%;
+            width: 30%;
+            }
+        }
+    }
 }
+
+//END OF CODE
+

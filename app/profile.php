@@ -126,7 +126,7 @@
                             echo"<div class='custom-card card__inner'>";
                             echo"<span><img class='crd-img' src='".$row['user_image']."'width='100%' height='20%'></span>";
                             echo"<p> ".$row['first_name']."</p>";
-                           
+                            echo "<a href='userupdate.php?view=".$row['username']." '>Update Profile</a>";
                             echo"</div>";
                             echo"</div>";
                              echo"<p> ".$row['email_address']."</p>";

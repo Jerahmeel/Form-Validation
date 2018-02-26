@@ -45,21 +45,14 @@ document.querySelector("#sup").addEventListener("click", function () {
     document.querySelector(".employee-modal").classList.remove('hide');
     document.querySelector(".sign-up-modal").classList.add('hide');
 });
-document.querySelector("#up").addEventListener("click", function () {
-    document.querySelector(".employee-modal").classList.remove('hide');
-    document.querySelector(".sign-up-modal").classList.add('hide');
-});
+
 
 $("#sup").click(function (e) { 
     e.preventDefault();
     $('.employee-modal').addClass('hide');
     $('.sign-up-modal').removeClass('hide');
 });
-$("#up").click(function (e) {
-    e.preventDefault();
-    $('.employee-modal').addClass('hide');
-    $('.sign-up-modal').removeClass('hide');
-});
+
 
 $("#log-in").click(function (e) {
     e.preventDefault();

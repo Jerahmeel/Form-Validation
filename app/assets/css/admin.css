@@ -13,19 +13,8 @@
   border-radius: 0%;
   padding: 3px;
 }
-
-.nav-top {
-  margin: 0;
-  background-color: #5a4848;
-  border: none;
-  border-radius: 0%;
-  height: 60px;
-}
-
-.cont {
+.nav-cntainer .nav-cntents .dt {
   width: 100%;
-  padding: 0;
-  position: absolute;
 }
 
 .sidenav {
@@ -57,35 +46,73 @@ body {
   background: #eceef1;
   color: #333a45;
 }
-body .cont {
+body .log-box {
+  position: fixed;
+}
+body .log-box .cont {
   height: 100%;
   width: 100%;
   padding: 10%;
 }
-body .cont #statusdummy {
+body .log-box .cont #statusdummy {
   background-color: #818181;
 }
-body .cont #btnin {
+body .log-box .cont #btnin {
   width: 30%;
-  height: 20%;
+  height: 50%;
 }
-body .cont #btnout {
+body .log-box .cont #btnout {
   width: 30%;
-  height: 20%;
+  height: 30%;
 }
-
-.body-container {
+body .log-box .clockdate-wrapper {
+  background-color: #333;
+  padding: 15px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+body .log-box #clock {
+  background-color: #333;
+  font-family: sans-serif;
+  font-size: 45px;
+  text-shadow: 0px 0px 1px #fff;
+  color: #fff;
+}
+body .log-box #clock span {
+  color: #888;
+  text-shadow: 0px 0px 1px #333;
+  font-size: 30px;
+}
+body .log-box #date {
+  letter-spacing: 10px;
+  font-size: 14px;
+  font-family: arial,sans-serif;
+  color: #fff;
+}
+body .rem-box {
+  padding: 0;
+  background-color: #e9b7b7;
+  min-height: 100vh;
+  height: auto;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+}
+body .rem-box .body-container {
   height: auto;
   width: 100%;
   position: relative;
 }
-
-.wrapper {
+body .rem-box .body-container .wrapper {
   margin: 10em  auto;
   max-width: 1000px;
 }
-
-.cards {
+body .rem-box .body-container .wrapper .cards {
   padding: 15px;
   display: flex;
   flex-flow: row wrap;
@@ -275,38 +302,6 @@ body .cont #btnout {
 
 #openBtn img {
   width: 180px;
-}
-
-.clockdate-wrapper {
-  background-color: #333;
-  padding: 15px;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-  border-radius: 5px;
-  margin: 0 auto;
-  margin-top: 5%;
-}
-
-#clock {
-  background-color: #333;
-  font-family: sans-serif;
-  font-size: 45px;
-  text-shadow: 0px 0px 1px #fff;
-  color: #fff;
-}
-
-#clock span {
-  color: #888;
-  text-shadow: 0px 0px 1px #333;
-  font-size: 30px;
-}
-
-#date {
-  letter-spacing: 10px;
-  font-size: 14px;
-  font-family: arial,sans-serif;
-  color: #fff;
 }
 
 /* The navigation menu links */

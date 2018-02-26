@@ -6,70 +6,33 @@
   margin: 0;
 }
 .main-row .log-box {
-  position: fixed;
   height: 100vh;
-  padding: 100px 50px 150px 50px;
+  padding: 90px 50px 150px 50px;
+  position: fixed;
 }
 .main-row .log-box .logo {
   text-align: center;
 }
 .main-row .log-box .logo img {
   margin-top: 20px;
+  margin-bottom: 40px;
   height: 100px;
   width: 300px;
 }
 .main-row .log-box .user-img {
-  text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0;
+}
+.main-row .log-box .user-img .selectuser {
+  border: none;
+  background-color: white;
   margin: 2px;
 }
-.main-row .log-box .user-img img {
-  height: 100px;
-  width: 100px;
-}
-.main-row .log-box .main-container {
-  width: 100%;
-}
-.main-row .log-box .main-container .modal-dialog {
-  padding-top: 1%;
-  padding-bottom: 4%;
-  width: 60%;
-  margin: 0 20%;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content {
-  background-color: #fafafa;
-  opacity: 0.9;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .login-text {
-  text-align: center;
-  color: black;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .sign-up {
-  text-align: center;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .sign-up a {
-  color: black;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .sign-up h5 {
-  color: #b1aaaa;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .btn-link {
-  color: white;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .login-button {
-  float: right;
-  padding-left: 1%;
-  padding-right: 1%;
-  width: 30%;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .forget-pass {
-  text-align: left;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .forget-pass a {
-  color: black;
-}
-.main-row .log-box .main-container .modal-dialog .modal-content .modal-heading h2 {
-  color: #ffffff;
+.main-row .log-box .user-img .selectuser img {
+  height: 180px;
+  width: 150px;
 }
 .main-row .rem-box {
   padding: 0;
@@ -86,6 +49,7 @@
   font-size: 200%;
 }
 .main-row .rem-box .ann-card {
+  min-height: 10vh;
   height: auto;
   width: 100%;
   background: white;
@@ -93,22 +57,55 @@
   margin-bottom: 1%;
   padding: 3%;
 }
-.main-row .rem-box .ann-card .ann-img {
-  float: left;
-  height: 10%;
-  width: 15%;
-  border-radius: 50px;
-  margin-right: 3%;
+.main-row .rem-box .ann-card .u-cont {
+  text-align: center;
+  border-right: solid black 2px;
 }
-.main-row .rem-box .ann-card #ann_name {
+.main-row .rem-box .ann-card .u-cont .ann-img {
+  height: 30%;
+  width: 35%;
+  border-radius: 50px;
+}
+.main-row .rem-box .ann-card .u-cont #ann_name {
   padding: 10px 10px;
   font-size: 20px;
   color: rgba(51, 4, 4, 0.897);
 }
-.main-row .rem-box .ann-card #ann_msg {
+.main-row .rem-box .ann-card .a-cont #ann_msg {
   margin: 0;
   padding: 10px;
   font-size: 16px;
+}
+
+.main-container {
+  width: 100%;
+}
+.main-container #logincont {
+  margin-top: 8%;
+}
+.main-container #logincont .modal-content {
+  background-color: #fafafa;
+  opacity: 0.9;
+  text-align: center;
+  box-shadow: none;
+}
+.main-container #logincont .modal-content .login-text {
+  color: #8f2323;
+}
+.main-container #logincont .modal-content .user-image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 3%;
+}
+.main-container #logincont .modal-content .user-image img {
+  width: 30%;
+  height: 10%;
+}
+.main-container #logincont .modal-content .login-button {
+  float: right;
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 30%;
 }
 
 /*# sourceMappingURL=index.css.map */
